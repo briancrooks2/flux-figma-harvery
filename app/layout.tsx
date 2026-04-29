@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono, Playfair_Display } from "next/font/google";
+import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        <SanityLive />
+      </body>
     </html>
   );
 }
