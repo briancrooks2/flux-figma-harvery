@@ -93,7 +93,8 @@ function CtaBox({ fullWidth }: { fullWidth?: boolean }) {
 }
 
 export default async function SelectedWorkSection() {
-  const { data: items } = await sanityFetch({ query: QUERY })
+  const { data } = await sanityFetch({ query: QUERY })
+  const items = (data ?? []) as PortfolioItem[]
   const leftCards = items.slice(0, 2)
   const rightCards = items.slice(2, 4)
 
